@@ -12,7 +12,7 @@ env:
 before_install:
   - sudo apt-get -qq update
   - sudo apt-get install -y git
-script: sh -v ./run-checks $TEST_SUITE
+script: sh -v ./runtests.sh $TEST_SUITE
 after_success:
   - go get github.com/mattn/goveralls
   - goveralls -coverprofile=.coverage-go/coverage.out -service=travis-ci
