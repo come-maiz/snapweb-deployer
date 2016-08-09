@@ -1,0 +1,18 @@
+name: snapweb-deployer
+version: 0.1dev
+summary: Simple project to deploy Snapweb from pull requests.
+description: |
+  The deployer takes a pull request ID, patches it to make snapweb unique, builds it and
+  installs it in order to try the changes.
+confinement: devmode
+
+apps:
+  snapweb-deployer:
+    command: bin/deployer
+    daemon: simple
+
+parts:
+  snapweb-deployer:
+    source: .
+    plugin: go
+    go-importpath: github.com/elopio/snapweb-deployer
