@@ -16,3 +16,4 @@ parts:
     source: .
     plugin: go
     go-importpath: github.com/elopio/snapweb-deployer
+    build-packages: [git]
